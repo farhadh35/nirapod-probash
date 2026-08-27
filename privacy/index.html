@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Nirapod Probash collects no personal data. Documents you add stay encrypted on your own phone.">
+<meta name="robots" content="index, follow">
+<title>Nirapod Probash Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;700&family=Noto+Sans+Bengali:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+  /* Complete light palette. Neutrals carry a slight green bias so they read as
+     chosen alongside the app's own deep green rather than as default greys. */
+  :root {
+    --ground:   #FBFAF7;
+    --surface:  #FFFFFF;
+    --ink:      #14201B;
+    --muted:    #5C6B64;
+    --faint:    #8A968F;
+    --rule:     #E2E6E2;
+    --green:    #0B6E4F;
+    --green-dp: #064733;
+    --green-wash:#EEF6F2;
+    --gold:     #9C7A1E;
+    --gold-wash:#FAF4E2;
+  }
+  /* System-dark (no stamp on :root) — guarded so an explicit light choice wins. */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:   #0E1411;
+      --surface:  #161F1A;
+      --ink:      #E7EFE9;
+      --muted:    #A2B0A8;
+      --faint:    #7C8A83;
+      --rule:     #263029;
+      --green:    #4FBF95;
+      --green-dp: #8FD9BB;
+      --green-wash:#132420;
+      --gold:     #D9B45A;
+      --gold-wash:#231D0E;
+    }
+  }
+  /* Explicit dark choice wins over a light OS. */
+  :root[data-theme="dark"] {
+    --ground:   #0E1411;
+    --surface:  #161F1A;
+    --ink:      #E7EFE9;
+    --muted:    #A2B0A8;
+    --faint:    #7C8A83;
+    --rule:     #263029;
+    --green:    #4FBF95;
+    --green-dp: #8FD9BB;
+    --green-wash:#132420;
+    --gold:     #D9B45A;
+    --gold-wash:#231D0E;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Public Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0 1.5rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 44rem; margin: 0 auto; }
+
+  bn, .bn { font-family: "Noto Sans Bengali", "Public Sans", sans-serif; }
+
+  /* ---------- masthead ---------- */
+  header.mast {
+    display: flex; flex-direction: column; gap: .5rem;
+    padding: 4rem 0 1.75rem;
+    border-bottom: 2px solid var(--green);
+  }
+  .eyebrow {
+    font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+    font-weight: 700; color: var(--gold);
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600; font-size: clamp(2.1rem, 6vw, 3rem);
+    line-height: 1.1; margin: 0; text-wrap: balance;
+    letter-spacing: -.015em;
+  }
+  .sub { color: var(--muted); font-size: .95rem; margin: 0; }
+
+  /* ---------- the one-sentence answer, up front ---------- */
+  .summary {
+    background: var(--green-wash);
+    border-left: 3px solid var(--green);
+    border-radius: 0 6px 6px 0;
+    padding: 1.4rem 1.5rem;
+    margin: 2.5rem 0 3rem;
+  }
+  .summary h2 {
+    font-family: "Public Sans", sans-serif;
+    font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+    font-weight: 700; color: var(--green-dp);
+    margin: 0 0 .6rem;
+  }
+  .summary p { margin: 0; font-size: 1.05rem; }
+
+  h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600; font-size: 1.5rem; line-height: 1.25;
+    margin: 3rem 0 .75rem; text-wrap: balance;
+    letter-spacing: -.01em;
+  }
+  h2:first-of-type { margin-top: 0; }
+  p { margin: 0 0 1rem; }
+  a { color: var(--green); text-underline-offset: 2px; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px;
+  }
+
+  ul { padding-left: 1.15rem; margin: 0 0 1rem; }
+  li { margin-bottom: .5rem; }
+  li::marker { color: var(--faint); }
+
+  strong { font-weight: 700; }
+  .nope { color: var(--green-dp); font-weight: 700; }
+
+  /* ---------- permissions: a definition list, because that is what it is ---- */
+  .perms {
+    display: grid; gap: 0; margin: 1.25rem 0 0;
+    border-top: 1px solid var(--rule);
+  }
+  .perm {
+    display: grid; grid-template-columns: 12rem 1fr; gap: 1.25rem;
+    padding: 1.05rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .perm dt {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: .78rem; line-height: 1.5; color: var(--gold);
+    font-weight: 500; word-break: break-word;
+  }
+  .perm dd { margin: 0; }
+  @media (max-width: 34rem) {
+    .perm { grid-template-columns: 1fr; gap: .3rem; }
+  }
+
+  /* ---------- vault callout ---------- */
+  .vault {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.4rem 1.5rem;
+    margin: 1.25rem 0;
+  }
+  .vault ul { margin-bottom: 0; }
+
+  .keep {
+    background: var(--gold-wash);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    padding: .9rem 1.1rem;
+    margin: 1.25rem 0 0;
+    font-size: .95rem;
+  }
+
+  footer {
+    margin-top: 4rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted); font-size: .9rem;
+  }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .88em; }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <header class="mast">
+    <span class="eyebrow">Android application</span>
+    <h1>Privacy Policy</h1>
+    <p class="sub">Nirapod Probash <span class="bn">(নিরাপদ প্রবাস)</span> &middot; Last updated 27 August 2026</p>
+  </header>
+
+  <section class="summary">
+    <h2>In one sentence</h2>
+    <p>
+      Nirapod Probash has no account, collects nothing about you, and uploads nothing.
+      It uses the internet for exactly one thing — downloading updates to the public
+      register of recruiting agencies — and that is a one-way download. Your documents,
+      your searches and your calculations never leave your phone.
+    </p>
+  </section>
+
+  <h2>What we collect</h2>
+  <p>
+    <span class="nope">Nothing.</span> There is no registration, no login, no analytics SDK,
+    no advertising SDK, no crash reporting and no unique identifier. We do not know who you
+    are, that you installed the app, or what you looked at in it.
+  </p>
+
+  <h2>Your documents</h2>
+  <p>
+    The document vault <span class="bn">(কাগজপত্র)</span> lets you photograph your passport,
+    visa or contract so you keep a copy if an agency takes the originals. Those images:
+  </p>
+  <div class="vault">
+    <ul>
+      <li>are encrypted with <strong>AES-256-GCM</strong>, using a key generated on your phone
+          and held in the Android keystore;</li>
+      <li>are stored only in the app's private storage — they are never written to your photo
+          gallery, so they do not appear in a cloud photo backup;</li>
+      <li>are never uploaded — the app has no upload path at all, and no screen that transmits
+          anything you type or photograph;</li>
+      <li>are protected behind your phone's own lock (PIN, pattern or fingerprint), because
+          phones in this community are often shared.</li>
+    </ul>
+  </div>
+  <div class="keep">
+    Deleting a document overwrites the file and removes it. Uninstalling the app deletes all
+    of them. Neither we nor anyone else can recover them — <strong>keep paper copies too.</strong>
+  </div>
+
+  <h2>Permissions, and why each one exists</h2>
+  <dl class="perms">
+    <div class="perm">
+      <dt>INTERNET</dt>
+      <dd>Only to download updated agency-register and cost data from our server. The app asks
+          for data; it never sends any. The request carries no body, no identifier and no
+          account, so the server cannot tell one phone from another.</dd>
+    </div>
+    <div class="perm">
+      <dt>ACCESS_NETWORK_STATE</dt>
+      <dd>So a failed update can honestly say “no connection” rather than blaming the server.</dd>
+    </div>
+    <div class="perm">
+      <dt>Camera / photo access</dt>
+      <dd>Only when you tap <span class="bn">“যোগ করুন”</span> to add a document. Used for that
+          image and nothing else. The app holds no camera or storage permission of its own — it
+          uses the system camera and the Android photo picker.</dd>
+    </div>
+    <div class="perm">
+      <dt>USE_BIOMETRIC<br>USE_FINGERPRINT</dt>
+      <dd>To unlock the vault. The check runs entirely on your phone; we never receive your
+          fingerprint or PIN.</dd>
+    </div>
+  </dl>
+
+  <h2>Agency data in the app</h2>
+  <p>
+    The recruiting-agency licence records shipped with the app are a copy of the public register
+    published by the Bureau of Manpower, Employment and Training (BMET/RAIMS). They are public
+    government data about businesses, not about you. Searching happens on your phone; your
+    searches are not sent anywhere.
+  </p>
+
+  <h2>Links out of the app</h2>
+  <p>
+    Some advice cards offer a button to open an official website — for example
+    <span class="mono">bangladeshcustoms.gov.bd</span>. Tapping it hands the address to your
+    browser and you leave the app. Those sites have their own privacy practices, which we do
+    not control.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    The app is intended for adults preparing to work abroad. It collects no data from anyone,
+    of any age.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If a future version ever sends anything from your phone to us, this page will be updated
+    before that version is released, and the change will be described here in plain words
+    rather than buried.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions about this policy: <span class="mono">privacy@nirapodprobash.bd</span>
+  </p>
+
+  <footer>
+    <p>
+      Every claim on this page is checkable against the app's source. That is deliberate: this
+      app asks migrant workers to photograph their passport, which is exactly what a fraudster
+      asks for too. “Trust us” is not an answer that earns that.
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>
